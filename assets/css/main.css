@@ -2309,7 +2309,12 @@ input, select, textarea {
 		}
 
 /* Image */
-
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+  }
 	.image {
 		border-radius: 4px;
 		border: 0;
@@ -2437,6 +2442,8 @@ input, select, textarea {
 				border-top: 0;
 			}
 
+
+			
 /* Button */
 
 	input[type="submit"],
