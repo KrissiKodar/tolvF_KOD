@@ -4,6 +4,9 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<!-- Import the component -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 <html>
 	<head>
 		<title>3D prentun og 3D skönnun</title>
@@ -42,7 +45,8 @@
 						<li><a href="index.html">Forsíða</a></li>
 						<li><a href="nanar_um_mig.html">Ferilskrá</a></li>
 						<li><a href="verkefni1.html">Verkefni 1</a></li>
-						<li><a href="generic.html">Verkefni 2</a></li>
+						<li><a href="verkefni2.html">Tölvustuddur skurður</a></li>
+						<li><a href="verkefni3.html">3D prentun og 3D skönnun</a></li>
 						<li><a href="elements.html">Elements</a></li>
 					</ul>
 				</nav>
@@ -51,10 +55,82 @@
 					<div id="main">
 						<div class="inner">
 							<h1>3D prentun og 3D skönnun</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h2>3D prentun</h2>
+							<p>Í þessu verkefni á að hanna módel fyrir 3D prentun sem ekki væri hægt að framkvæma með frádráttar framleiðslu. Hluturinn má vera að hámarki 100g, skv slicer. Eftir það á að 3D skanna einhvern hlut, til dæmis með photogrammetríu.</p>
+							<p>Áður en ég byrjaði á nokkurri hugmyndavinnu um módel fyrir 3D prentun þá var ég búinn að ákveða mig að nota Prusa MK3+ 3D prentarann sem var nýbúið að setja upp í VR3. Ástæðan fyrir því er að ég hafði notað hann örlítið áður og ég hafði bara heyrt góða hluti um hann.</p>
+							<p>Það tók mig sirka hálfan dag að spá og spekúlera um hvað ég gæti prentað sem að myndi uppfylla hönnunarreglur. Ég ákvað að prenta eitthvað sem er “print in place”, 
+								sem er nokkurs konar samsettur hlutur sem hægt er að prenta beint út. Til dæmis eins og á þessari <a href="https://all3dp.com/2/coolest-print-in-place-3d-models/">mynd</a>:</p>
+							<span class="image main"><img src="images/print_in_place_daemi.jpg" alt="" /></span>
+							<p>Ég komst að þeirri niðurstöðu að ég ætlaði að prenta “vatnsbyssu” eða “sprautu”. 
+								Þannig að þetta myndi vera tveir partar, prentaðir saman. 
+								Svo þegar hluturinn væri tilbúinn ætti vonandi að vera hægt að sjúga vatn upp í sprautuna og sprauta því upp í loftið til gamans. 
+								Til þess að eiga séns á því þyrfti ég að vita hvert væri minnsta mögulega clearance á milli tveggja parta sem ég gæti prentað. 
+								Til þess að komast að því notfærði ég mér prufuna sem að ég og hópurinn minn prentuðum út (0.2 mm lagþykkt) <b>(setja link á “hópverkefnið”)</b></p>
+								<span class="image main"><img src="images/test_print1.jpg" alt="" /></span>
+								<span class="image main"><img src="images/test_print2.jpg" alt="" /></span>
+								<p>Frá prufunni mældi ég að minnsti clearance sem að ég ætti að þora að prenta á milli tveggja parta væri sirka 0.6 mm.</p>
+							<h2>Sprauta (eða vatnsbyssa) teiknuð</h2>
+							<p>Ég teiknaði sprautuna bara beint úr hausnum á mér í Fusion 360 og reyndi að hafa hana fullkomlega parametríska, að minnsta kosti með tilliti til “clearance” á milli parta, sem ég nefndi TOL í parametrum mínum í Fusion. 
+								TOL-ið skipti mestu máli því ég myndi ekki vilja að báðir partarnir væru alveg pikk fastir saman.</p>	
+							<p>Sprautan er eins og maður myndi hugsa sér, sívalningur með annan minni sívalning innan í sér sem festist á stöng sem leiðir út úr stærri sívalningnum.</p>
+							<p>Svona leit sprautan út þegar ég var búinn að teikna hana. </p>
+							<span class="image main"><img src="images/ljota_ad_utan.jpg" alt="" /></span>
+							Á myndinni hér að neðan sést hvernig sprautan lítur út að innan. 
+							<span class="image main"><img src="images/gamla_ljota_sprauta.jpg" alt="" /></span>
+							<p>Það sést að það er smá clearance á milli innri partsins og stóra sívalningssins. Svo var bara að vona að 3D prentarinn myndi ekki prenta þetta sem einn hlut!</p>
+							<p>Það var frekar augljóst að það þyrftu að vera support neðst undir stóra sívalningnum. 
+								Ég valdi því í print settings innan í Prusa Slicernum að búa til stuðning (e. supports) sjálfkrafa. Stuðningurinn kom út svona:</p>
+							<span class="image main"><img src="images/ljot_slice.gif" alt="Ljót slice" /></span>
+							<p>Ég var frekar sáttur með þetta, en þegar eins og þá eru supports (græna) allsstaðar innan í sprautunni.</p> 
+							<p>Það er alls ekki gott því þá væru partarnir tveir alveg fastir saman og erfitt að losna við supportin þar.</p>
+							<p>Ég vildi því ekki prenta þetta alveg strax. Ég ákvað að fara aftur inn í fusion og endurhanna sprautuna að innan frá. 
+								Ég einfaldlega setti 45° halla á toppstykkið og á ytri sívalninginn sjálfann. 
+								Prentarinn ætti að fara auðveldlega með að prenta í 45° halla miðað við prófið sem hópurinn minn prentaði út <b>(setja link á hópverkefnið)</b>.
+							</p>
+							<span class="image main"><img src="images/ny_honnun.jpg" alt="Ný hönnun" /></span>
+							<p>Í þessu gif hér að neðan sést í raun allt teikniferlið. Ég bætti við höldur neðst utan á sprauturnar til þess að auðveilda það að sprauta úr henni og af því að það lítur bara kúl út.</p>
+							<span class="image main"><img src="images/gif_prufa4.gif" alt="" /></span>
+							<p>Hér eru allir parametrarnir (örugglega ónauðsynlegt að hafa svona marga, en þetta var bara fínt að vinna með)</p>
+							<span class="image main"><img src="images/3D_parameters.jpg" alt="3D parametrar" /></span>
+							<p>Til þess að losna svo endanlega við supportin innan í sprautunni þá valdi ég valmöguleikann "support on build plate only"</p>
+							<span class="image main"><img src="images/support_plate_only.jpg" alt="Support on build plate only" /></span>
+							<p>Ég henti þessu svo í slicerinn aftur og það leit svona út, nú sést að það eru engin supports innan í.</p>
+							<span class="image main"><img src="images/flott_slice_2.gif" alt="Flott slice" /></span>
+							<p>Vert er að taka fram að þetta var prentað í Original Prusa i3 MK3S með MMU viðbótinni. Infill var 20% og layer height 0.20mm (eins og testið hjá hópnum mínum!).</p>
+							<p><b>setja svo inn fullprentaða hlutinn!!!!!!</b></p>							
+							
+							
+							<h2>3D skönnun</h2>
+							
+							<p>Ég var fljótur að finna mér hlut til þess að 3D skanna. Ég valdi nýju 66° Norður húfuna mína.
+								 Hér sést hún:
+							</p>
+							<span class="image main"><img src="images/hufa.jpg" alt="Húfan mín" /></span>
+							
+							<p>Hér notaði 3D Zephyr af því það var hlekkur fyrir það í verkefnalýsingunni. 
+							Maður getur sett 50 myndir inn í forritið á ókeypis aðgang og ég gerði það. 
+							Ég setti húfuna á vel lýst gólf inni í tölvustofunni á þriðju hæð í VR-2.
+							Svo hélt ég símanum mínum mjög stöðugum á meðan ég tók myndirnar í hring í kringum húfuna. Þegar ég var búinn að taka allar myndirnar þá setti ég þær á tölvuna mína og fylgdi svo <a href="https://www.3dflow.net/technology/documents/3df-zephyr-tutorials/convert-photos-3d-models-3df-zephyr/">leiðbeiningunum frá 3D Zephyr alla leið</a>.
+							Ég notaði "default" settings í öllu workflow-inu (sem lýst er í hlekknum hér á undan) af því að það var mælt með því.
+							</p>
+							<span class="image main"><img src="images/dense_default.jpg" alt="Default" /></span>
+							Sparse point cloud generation
+							<span class="image main"><img src="images/sparse_cloud.jpg" alt="Sparse" /></span>
+							Dense point cloud generation
+							<span class="image main"><img src="images/scan1.jpg" alt="1" /></span>
+							Mesh extraction
+							<span class="image main"><img src="images/scan2.jpg" alt="2" /></span>
+							Textured mesh generation (Í hæstu gæðum)
+							<span class="image main"><img src="images/scan3.jpg" alt="3" /></span>
+							<p>Þetta kom miklu betur út en ég var að búast við, miðað við að þetta er í fyrsta skipti sem ég geri þetta!</p>
+							<p>Hér er svo húfan í öllu sínu veldi :) (módelið verður skýrara ef það er kyrrt, og það er hægt að zoom-a inn!)</p>
+							<style>
+							model-viewer {
+							width: 1366px;
+							height: 768px;
+							}
+							</style>
+							<model-viewer alt="3D skönnun af 66° Norður húfu" src="images/fyrsta_export.glb" shadow-intensity="1" camera-controls></model-viewer>
 						</div>
 					</div>
 
