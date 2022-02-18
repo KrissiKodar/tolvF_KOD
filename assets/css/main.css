@@ -379,6 +379,7 @@ input, select, textarea {
 
 		.row > .off-3 {
 			margin-left: 25%;
+			width: 50%;
 		}
 
 		.row > .col-4 {
@@ -2362,6 +2363,7 @@ input, select, textarea {
 			margin: 0 0 3em 0;
 			width: 100%;
 		}
+
 
 			.image.main img {
 				width: 100%;
